@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        cursor: default;
+      }
+      .background-div {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100dvh;
+        position: relative;
+      }
+
+      .background-red-div {
+        background-color: rgba(90, 26, 37, 0.938);
+      }
+
+      .background-black-div {
+        background-color: rgb(3, 18, 29);
+      }
+
+      .img-div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* border-style: solid; */
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .messi {
+        height: 750px;
+        width: auto;
+        position: absolute;
+        top: 50px;
+        left: 60px;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .goat-div {
+        display: block;
+        position: relative;
+        background-color: black;
+        color: wheat;
+        width: 100%;
+        height: 40px;
+        top: -730px;
+      }
+
+      .marquee {
+        padding-top: 6px;
+        position: absolute;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .marquee span {
+        display: inline-block;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        letter-spacing: 1.5px;
+        -webkit-text-stroke: 0.3px rgb(201, 121, 121);
+        animation: marquee 20s linear infinite;
+        padding-left: 100%;
+      }
+
+      .marquee2 span {
+        animation-delay: 10s;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-100%, 0);
+        }
+      }
+
+      .left-ball-div {
+        position: relative;
+        top: -600px;
+        /* border-style: solid; */
+        width: 200px;
+        left: 280px;
+        z-index: 2;
+        animation: spin 4s linear infinite;
+      }
+
+      .left-ball {
+        height: 180px;
+      }
+
+      .right-ball-div {
+        position: relative;
+        top: -490px;
+        /* border-style: solid; */
+        width: 200px;
+        left: 1300px;
+        animation: spin 4s linear infinite;
+        z-index: 1;
+      }
+
+      .right-ball {
+        height: 180px;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .text-div {
+        position: relative;
+        top: -1040px;
+        /* border-style: solid; */
+        height: 200px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .leo {
+        font-size: 11rem;
+        transform: scale(1, 2);
+        font-stretch: ultra-expanded;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: bold;
+        margin-top: 1px;
+        margin-left: 2px;
+        margin-right: 2px;
+        color: rgb(31, 21, 43);
+        -webkit-text-stroke: 0.3px black;
+      }
+
+      .left-card-div {
+        /* border-style: solid; */
+        position: relative;
+        top: -940px;
+        height: 240px;
+        width: 350px;
+        left: 120px;
+        z-index: 3;
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.1)
+        );
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        background-size: 5px 5px;
+      }
+
+      .right-card-div {
+        position: relative;
+        top: -1380px;
+        height: 240px;
+        width: 350px;
+        left: 990px;
+        z-index: 3;
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.1)
+        );
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        background-size: 5px 5px;
+      }
+
+      p {
+        color: white;
+        padding: 10px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        margin: 1px;
+        font-size: 18px;
+      }
+      @media screen and (min-width: 1100px) and (max-width: 1200px) {
+        .leo {
+          position: relative;
+          font-size: 9rem;
+        }
+        .left-card-div {
+          position: relative;
+          left: 3%;
+          height: 240px;
+          width: 350px;
+        }
+        .left-card-div p {
+          font-size: 1em;
+        }
+        .right-card-div {
+          position: relative;
+          left: 67%;
+          top: -1400px;
+          height: 240px;
+          width: 340px;
+        }
+        .right-card-div p {
+          font-size: 1em;
+        }
+        .left-ball-div {
+          left: 7%;
+        }
+        .right-ball-div {
+          left: 70%;
+          top: -500px;
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+        .img-div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          /* border-style: solid; */
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .messi {
+          height: 750px;
+          width: auto;
+          /* border-style: solid; */
+          position: absolute;
+          /*right: 50px;
+            transform: translate(-50% -50%); */
+          overflow: hidden;
+          z-index: 1;
+        }
+        .leo {
+          position: relative;
+          font-size: 10rem;
+        }
+        .left-card-div {
+          position: relative;
+          left: 3%;
+          height: 260px;
+          width: 360px;
+        }
+        .left-card-div p {
+          font-size: 1.2em;
+        }
+        .right-card-div {
+          position: relative;
+          left: 70%;
+          top: -1400px;
+          height: 260px;
+          width: 350px;
+        }
+        .right-card-div p {
+          font-size: 1.2em;
+        }
+        .left-ball-div {
+          left: 7%;
+        }
+        .right-ball-div {
+          left: 80%;
+          top: -450px;
+        }
+      }
+         @media screen and (min-width: 900px) and (max-width: 1100px) {
+
+        .messi {
+          height: 680px;
+          width: 1200px;
+          position: absolute;
+          overflow: hidden;
+          z-index: 1;
+          left: -200px;
+        }
+        .leo {
+          position: relative;
+          font-size: 7.6rem;
+          top: 20px;
+        }
+        .left-card-div {
+          position: relative;
+          left: 3%;
+          height: 200px;
+          width: 320px;
+        }
+        .left-card-div p {
+          font-size: .9em;
+        }
+        .right-card-div {
+          position: relative;
+          left: 66%;
+          top: -1400px;
+          height: 210px;
+          width: 300px;
+        }
+        .right-card-div p {
+          font-size: .9em;
+        }
+        .left-ball-div {
+          left: 7%;
+        }
+        .right-ball-div {
+          left: 70%;
+          top: -500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-div">
+      <div class="background-red-div"></div>
+      <div class="background-black-div"></div>
+    </div>
+    <div class="img-div">
+      <img class="messi" src="messi10.png" />
+    </div>
+
+    <div class="goat-div">
+      <div class="marquee">
+        <span
+          >&#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT</span
+        >
+      </div>
+      <div class="marquee marquee2">
+        <span
+          >&#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT &#9734; GOAT
+          &#9734; GOAT</span
+        >
+      </div>
+    </div>
+
+    <div class="left-ball-div">
+      <img class="left-ball" src="football.png" />
+    </div>
+    <div class="right-ball-div">
+      <img class="right-ball" src="football.png" />
+    </div>
+
+    <div class="text-div">
+      <p class="leo">LIONEL MESSI</p>
+    </div>
+
+    <div class="left-card-div">
+      <p>&#9711; Luis Lionel Andres Messi</p>
+      <p>&#9711; At 13 Messi joined Barcelona club's youth academy</p>
+      <p>&#9711; Born on June 24,1987 in Rosario,Argentina</p>
+      <p>&#9711; Debut in October 2004 and first goal in May 2005</p>
+    </div>
+    <div class="right-card-div">
+      <p>&#9711; 8 Ballon d'Or</p>
+      <p>&#9711; 7 FIFA World Player of the Year</p>
+      <p>&#9711; Most Goals scored in UEFA Champions League</p>
+      <p>&#9711; FIFA World Cup 2022</p>
+      <p>&#9711; 4 UEFA Champions League</p>
+    </div>
+  </body>
+</html>
